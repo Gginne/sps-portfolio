@@ -54,6 +54,20 @@ a {
     overflow: hidden;
 }
 
+.icon-btn{
+    font-size: 1.5rem;
+    color: #fff;
+    border: 1px solid var(--primary);
+    border-radius: 50%;
+    padding: .60rem;
+    margin: 0 .5rem;
+}
+
+.icon-btn:hover{
+    color: #fff;
+    background-color: var(--primary);
+}
+
 .m-heading{
 
     font-family: 'Permanent Marker', cursive;
@@ -101,6 +115,18 @@ a {
 
 /*Showcase */
 
+#showcase{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:
+    linear-gradient(rgba(0, 0, 0, 0.9),
+        rgba(17, 17, 17, 0.8)),
+    url('../img/header\ 3.jpg') no-repeat center center/cover;
+}
+
 #showcase .showcase-content .container{
     border-left: 1.5px solid var(--primary);
     border-right: 1.5px solid var(--primary);
@@ -116,11 +142,5 @@ a {
     margin-bottom: 1rem;
 }
 
-#showcase .showcase-content .social a{
-    font-size: 1.5rem;
-    color: #fff;
-    border: 1.5px solid var(--primary);
-    border-radius: 50%;
-    padding: .75rem;
-    margin: 0 .5rem;
-}
+/*About Me */
+
