@@ -1,9 +1,146 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,600,700,900');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+:root{
+    --primary: #fad503;
+    --dark: #0C0F10;
+    --secondary: #0f1314;
 }
 
-#greeting-container {
-  margin-top: 20px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #fff;
+    background-color: var(--secondary)
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Utilities */
+
+.p-1{padding: 1.5rem;}
+.p-2{padding: 2rem;}
+.p-3{padding: 3rem;}
+
+.py-1{padding: 1.5rem 0;}
+.py-2{padding: 2rem 0;}
+.py-3{padding: 3rem 0;}
+
+.m-1{margin: 1.5rem;}
+.m-2{margin: 2rem;}
+.m-3{margin: 3rem;}
+
+.my-1{margin: 1.5rem 0;}
+.my-2{margin: 2rem 0;}
+.my-3{margin: 3rem 0;}
+
+.m-1{margin: 1.5rem;}
+.m-2{margin: 2rem;}
+.m-3{margin: 3rem;}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 2rem;
+    overflow: hidden;
+}
+
+.icon-btn{
+    font-size: 1.5rem;
+    color: #fff;
+    border: 1px solid var(--primary);
+    border-radius: 50%;
+    padding: .60rem;
+    margin: 0 .5rem;
+}
+
+.icon-btn:hover{
+    color: #fff;
+    background-color: var(--primary);
+}
+
+.m-heading{
+
+    font-family: 'Permanent Marker', cursive;
+    font-size: 3rem;
+    font-weight: 200;
+    padding-bottom: 1rem;
+
+}
+
+
+.l-heading{
+
+    font-family: 'Permanent Marker', cursive;
+    font-size: 4rem;
+    font-weight: 200;
+    padding-bottom: 1rem;
+
+}
+
+
+.icon-btn:hover{
+    background-color: var(--primary);
+    
+}
+
+.text-center{
+    text-align: center;
+}
+
+.bg-primary{
+    background-color: var(--primary);
+}
+
+.bg-dark{
+    background-color: var(--dark);
+}
+
+.text-primary{
+    color: var(--primary);
+}
+
+.text-dark{
+    color: var(--dark);
+}
+
+/*Showcase */
+
+#showcase{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:
+    linear-gradient(rgba(0, 0, 0, 0.9),
+        rgba(17, 17, 17, 0.8)),
+    url('../img/header\ 3.jpg') no-repeat center center/cover;
+}
+
+#showcase .showcase-content .container{
+    border-left: 1.5px solid var(--primary);
+    border-right: 1.5px solid var(--primary);
+}
+
+#showcase .showcase-content h1.title{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 5rem;
+}
+
+#showcase .showcase-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/*About Me */
+
