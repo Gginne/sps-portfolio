@@ -3,7 +3,7 @@
 
 :root{
     --primary: #fad503;
-    --dark: #0C0F10;
+    --dark: #0E0E0E;
     --secondary: #0f1314;
 }
 
@@ -18,7 +18,7 @@ body {
     font-size: 1rem;
     line-height: 1.7;
     color: #fff;
-    background-color: var(--secondary)
+    background-color: var(--dark)
 }
 
 a {
@@ -129,12 +129,11 @@ a {
     background:
     linear-gradient(rgba(0, 0, 0, 0.8),
         rgba(17, 17, 17, 0.8)),
-    url('../img/header\ 3.jpg') no-repeat center center/cover;
+    url('../img/anim.gif') no-repeat center bottom/cover;
 }
 
 #showcase .showcase-content{
     border-left: 1.5px solid var(--primary);
-    border-right: 1.5px solid var(--primary);
 }
 
 #showcase .showcase-content h1.title{
@@ -149,8 +148,9 @@ a {
 
 
 /*About Me */
-#about{
-    height: 25vh;
+
+#about {
+    height: 40vh;
 }
 
 #about .container{
@@ -177,6 +177,16 @@ a {
     font-size: 3.75rem;
     margin-bottom: .5rem;
 }
+
+/*About Me */
+
+#projects .project-items {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 30px;
+}
+
+
 
 
 

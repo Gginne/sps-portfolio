@@ -15,14 +15,53 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+ const projectContainer = document.querySelector(".project-items");
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
-}
+ const projects = [
+    {
+        name: "Project 1",
+        desc: "This is project #1",
+        github: "#",
+        host: "#"
+    },
+    {
+        name: "Project 2",
+        desc: "This is project #2",
+        github: "#",
+        host: "#"
+    },
+    {
+        name: "Project 3",
+        desc: "This is project #3",
+        github: "#",
+        host: "#"
+    },
+    {
+        name: "Project 4",
+        desc: "This is project #4",
+        github: "#",
+        host: "#"
+    },
+    {
+        name: "Project 5",
+        desc: "This is project #5",
+        github: "#",
+        host: "#"
+    },
+ 
+  
+]
+
+let projectContent = ""
+projects.forEach((project, index) => {
+    let content = `
+    <div class="item">
+        
+        <img src="./img/item${index+1}.png" alt="${project.name}" width="500px>
+    </div>
+    `
+
+    projectContent += content
+})
+projectContainer.innerHTML = projectContent
