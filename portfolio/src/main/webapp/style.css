@@ -59,6 +59,8 @@ a {
     overflow: hidden;
 }
 
+
+
 .icon-btn{
     font-size: 1.5rem;
     color: #fff;
@@ -69,7 +71,6 @@ a {
 }
 
 .icon-btn:hover{
-    color: #fff;
     background-color: var(--primary);
 }
 
@@ -93,8 +94,12 @@ a {
 }
 
 
-.icon-btn:hover{
-    background-color: var(--primary);
+.lead{
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+.small{
+    font-size: .75rem;
     
 }
 
@@ -190,18 +195,27 @@ a {
     position: absolute;
     z-index: 2;
     background: rgba(0, 0, 0, 0.92); /* Black see-through */
-    width: 502px;
+    width: 150px;
+    height: auto;
     color: #f1f1f1;
     transition: .5s ease;
     color: white;
-    font-size: 16px;
     padding: 20px;
-    opacity: 0;
     text-align: center;
 }
 
-#projects .project-items .item:hover .item-overlay{
-    opacity: 1;
+#projects .project-items .item .item-overlay .project-links .icon-btn{
+    font-size: 14px;
+}
+
+#projects .project-items .item .item-overlay .project-desc, 
+#projects .project-items .item .item-overlay .project-links{
+    display: none;
+}
+
+#projects .project-items .item:hover .item-overlay .project-desc, 
+#projects .project-items .item:hover .item-overlay .project-links{
+    display: block;
     transition: .2s;
 }
 

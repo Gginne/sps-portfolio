@@ -20,32 +20,32 @@
 
  const projects = [
     {
-        name: "Project 1",
-        desc: "This is project #1",
+        name: "STORE202",
+        desc: "Online shoe store built in php",
         github: "#",
         host: "#"
     },
     {
-        name: "Project 2",
-        desc: "This is project #2",
+        name: "Photopress",
+        desc: "Photo-saving app built on mern stack",
         github: "#",
         host: "#"
     },
     {
-        name: "Project 3",
-        desc: "This is project #3",
+        name: "Mixionary",
+        desc: "Dictionary web app",
         github: "#",
         host: "#"
     },
     {
-        name: "Project 4",
-        desc: "This is project #4",
+        name: "WeatherMe",
+        desc: "Weather & forecast web app",
         github: "#",
         host: "#"
     },
     {
-        name: "Project 5",
-        desc: "This is project #5",
+        name: "Expense tracker",
+        desc: "Expense tracking web app built in vanilla js",
         github: "#",
         host: "#"
     },
@@ -58,9 +58,9 @@ projects.forEach((project, index) => {
     let content = `
     <div class="item">
         <div class="item-overlay">
-            <p class="text-primary">${project.name}</hp>
-            <p class="small">${project.desc}</p>
-            <div class="my-1">
+            <p class="project-title text-primary">${project.name}</hp>
+            <p class="project-desc my-1 small">${project.desc}</p>
+            <div class="project-links">
                 <a href=${project.github}><i class="fab fa-github icon-btn"></i></a>
                 <a href=${project.host}><i class="fas fa-external-link-alt icon-btn"></i></a>
             </div>
