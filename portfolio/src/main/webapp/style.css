@@ -182,9 +182,30 @@ a {
 
 #projects .project-items {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(2, 1fr);;
   grid-gap: 30px;
 }
+
+#projects .project-items .item .item-overlay{
+    position: absolute;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.92); /* Black see-through */
+    width: 502px;
+    color: #f1f1f1;
+    transition: .5s ease;
+    color: white;
+    font-size: 16px;
+    padding: 20px;
+    opacity: 0;
+    text-align: center;
+}
+
+#projects .project-items .item:hover .item-overlay{
+    opacity: 1;
+    transition: .2s;
+}
+
+
 
 
 

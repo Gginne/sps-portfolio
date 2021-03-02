@@ -57,8 +57,15 @@ let projectContent = ""
 projects.forEach((project, index) => {
     let content = `
     <div class="item">
-        
-        <img src="./img/item${index+1}.png" alt="${project.name}" width="500px>
+        <div class="item-overlay">
+            <p class="text-primary">${project.name}</hp>
+            <p class="small">${project.desc}</p>
+            <div class="my-1">
+                <a href=${project.github}><i class="fab fa-github icon-btn"></i></a>
+                <a href=${project.host}><i class="fas fa-external-link-alt icon-btn"></i></a>
+            </div>
+        </div>
+        <img src="./img/item${index+1}.png" alt="${project.name}" width="500" >
     </div>
     `
 
