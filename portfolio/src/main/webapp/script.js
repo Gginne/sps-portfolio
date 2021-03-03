@@ -15,14 +15,61 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+ const projectContainer = document.querySelector(".project-items");
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
-}
+ const projects = [
+    {
+        name: "Store202",
+        desc: "Online shoe store built in php",
+        github: "https://github.com/Gginne/IT202/tree/master/project",
+        host: "https://web.njit.edu/~gc348/IT202/project"
+    },
+    {
+        name: "Photopress",
+        desc: "Photo-saving app built on mern stack",
+        github: "https://github.com/Gginne/photopress",
+        host: "http://photopress.herokuapp.com/"
+    },
+      {
+        name: "Mixionary",
+        desc: "Dictionary web app",
+        github: "https://github.com/Gginne/mixionary",
+        host: "https://gginne.github.io/mixionary/"
+    },
+     {
+        name: "WeatherMe",
+        desc: "Weather & forecast web app",
+        github: "https://github.com/Gginne/weather-app",
+        host: "https://weatherandme.netlify.app/"
+    },
+   
+    {
+        name: "Expense tracker",
+        desc: "Expense tracking web app built in vanilla js",
+        github: "https://github.com/Gginne/expense-tracker",
+        host: "https://gginne.github.io/expense-tracker/"
+    }
+ 
+  
+]
+
+let projectContent = ""
+projects.forEach((project, index) => {
+    let content = `
+    <div class="item">
+        <div class="item-overlay">
+            <p class="project-title text-primary">${project.name}</hp>
+            <p class="project-desc my-1 small">${project.desc}</p>
+            <div class="project-links">
+                <a href=${project.github} target="_blank"><i class="fab fa-github icon-btn"></i></a>
+                <a href=${project.host} target="_blank"><i class="fas fa-external-link-alt icon-btn"></i></a>
+            </div>
+        </div>
+        <img src="./img/item${index+1}.png" alt="${project.name}" width="500" >
+    </div>
+    `
+
+    projectContent += content
+})
+projectContainer.innerHTML = projectContent
