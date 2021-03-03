@@ -20,35 +20,36 @@
 
  const projects = [
     {
-        name: "STORE202",
+        name: "Store202",
         desc: "Online shoe store built in php",
-        github: "#",
-        host: "#"
+        github: "https://github.com/Gginne/IT202/tree/master/project",
+        host: "https://web.njit.edu/~gc348/IT202/project"
     },
     {
         name: "Photopress",
         desc: "Photo-saving app built on mern stack",
-        github: "#",
-        host: "#"
+        github: "https://github.com/Gginne/photopress",
+        host: "http://photopress.herokuapp.com/"
     },
-    {
+      {
         name: "Mixionary",
         desc: "Dictionary web app",
-        github: "#",
-        host: "#"
+        github: "https://github.com/Gginne/mixionary",
+        host: "https://gginne.github.io/mixionary/"
     },
-    {
+     {
         name: "WeatherMe",
         desc: "Weather & forecast web app",
-        github: "#",
-        host: "#"
+        github: "https://github.com/Gginne/weather-app",
+        host: "https://weatherandme.netlify.app/"
     },
+   
     {
         name: "Expense tracker",
         desc: "Expense tracking web app built in vanilla js",
-        github: "#",
-        host: "#"
-    },
+        github: "https://github.com/Gginne/expense-tracker",
+        host: "https://gginne.github.io/expense-tracker/"
+    }
  
   
 ]
@@ -61,8 +62,8 @@ projects.forEach((project, index) => {
             <p class="project-title text-primary">${project.name}</hp>
             <p class="project-desc my-1 small">${project.desc}</p>
             <div class="project-links">
-                <a href=${project.github}><i class="fab fa-github icon-btn"></i></a>
-                <a href=${project.host}><i class="fas fa-external-link-alt icon-btn"></i></a>
+                <a href=${project.github} target="_blank"><i class="fab fa-github icon-btn"></i></a>
+                <a href=${project.host} target="_blank"><i class="fas fa-external-link-alt icon-btn"></i></a>
             </div>
         </div>
         <img src="./img/item${index+1}.png" alt="${project.name}" width="500" >
