@@ -36,7 +36,7 @@ public class ProjectServlet extends HttpServlet {
     private void populateProjects() {
         projects.add(
             new Project(
-                "Photopres",
+                "Photopress",
                 "Photo-saving app built on mern stack",
                 "https://github.com/Gginne/photopress",
                 "http://photopress.herokuapp.com/"
@@ -61,8 +61,9 @@ public class ProjectServlet extends HttpServlet {
         );
         projects.add(
             new Project(
-                "Expense tracker",
+                "Expense Tracker",
                 "Expense tracking web app built in vanilla js",
+                "ExpenseTrack",
                 "https://github.com/Gginne/expense-tracker",
                 "https://gginne.github.io/expense-tracker/"
             )
