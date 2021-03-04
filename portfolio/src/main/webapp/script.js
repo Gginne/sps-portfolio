@@ -21,27 +21,32 @@
  const getProjects = async () => {
      const res = await fetch("/projects");
      const data = await res.json();
-     console.log(data);
+     return data;
  }
 
+getProjects().then(projects => {
 
-
-let projectContent = ""
-projects.forEach((project, index) => {
+    let projectContent = ""
+    projects.forEach((project, index) => {
     let content = `
     <div class="item">
         <div class="item-overlay">
-            <p class="project-title text-primary">${project.name}</hp>
-            <p class="project-desc my-1 small">${project.desc}</p>
+            <p class="project-title text-primary">${project.title}</hp>
+            <p class="project-desc my-1 small">${project.description}</p>
             <div class="project-links">
                 <a href=${project.github} target="_blank"><i class="fab fa-github icon-btn"></i></a>
                 <a href=${project.host} target="_blank"><i class="fas fa-external-link-alt icon-btn"></i></a>
             </div>
         </div>
-        <img src="./img/item${index+1}.png" alt="${project.name}" width="500" >
+        <img src="./img/${project.image}.png" alt="${project.name}" width="500" >
     </div>
     `
-
     projectContent += content
 })
 projectContainer.innerHTML = projectContent
+    
+}).catch(err => {
+    console.err(err)
+})
+
+

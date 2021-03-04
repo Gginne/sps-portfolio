@@ -61,8 +61,9 @@ public class ProjectServlet extends HttpServlet {
         );
         projects.add(
             new Project(
-                "Expense tracker",
+                "Expense Tracker",
                 "Expense tracking web app built in vanilla js",
+                "ExpenseTrack",
                 "https://github.com/Gginne/expense-tracker",
                 "https://gginne.github.io/expense-tracker/"
             )
