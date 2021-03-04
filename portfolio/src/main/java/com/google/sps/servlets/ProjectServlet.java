@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
 import com.google.sps.servlets.models.Project;
 
 
@@ -16,17 +17,21 @@ import com.google.sps.servlets.models.Project;
 @WebServlet("/projects")
 public class ProjectServlet extends HttpServlet {
 
-    List<Project> projects;
+    Project[] projectsArray;
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         populateProjects();
+        Gson projectGson = new Gson();
+        for(Project p: projects){
+            
+        }
         response.setContentType("text/html;");
         response.getWriter().println("<h1>Projects Go Here</h1>");
     }
 
     private void populateProjects() {
-        Project[] projectsArray = { 
+        projectsArray = { 
             new Project(
                 "Photopres",
                 "Photo-saving app built on mern stack",
@@ -59,6 +64,6 @@ public class ProjectServlet extends HttpServlet {
             )
         };
 
-        projects = Arrays.asList(projectsArray);
+       
     }
 }
