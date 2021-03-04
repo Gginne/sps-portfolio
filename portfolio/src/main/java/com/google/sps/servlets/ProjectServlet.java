@@ -16,7 +16,7 @@ import com.google.sps.servlets.models.Project;
 @WebServlet("/projects")
 public class ProjectServlet extends HttpServlet {
 
-    private List<Project> projects;
+    List<Project> projects;
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
