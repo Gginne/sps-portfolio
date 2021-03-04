@@ -18,6 +18,16 @@
 
  const projectContainer = document.querySelector(".project-items");
 
+ const getProjects = async () => {
+     const res = await fetch("/projects");
+     const data = await res.text();
+
+     console.log(data);
+
+ }
+
+ getProjects()
+
  const projects = [
     {
         name: "Store202",
