@@ -20,12 +20,12 @@ public class ProjectServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        makeProjects();
+        populateProjects();
         response.setContentType("text/html;");
         response.getWriter().println("<h1>Projects Go Here</h1>");
     }
 
-    private void makeProjects() {
+    private void populateProjects() {
         Project[] projectsArray = { 
             new Project(
                 "Photopres",
