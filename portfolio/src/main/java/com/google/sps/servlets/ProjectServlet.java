@@ -36,7 +36,7 @@ public class ProjectServlet extends HttpServlet {
     private void populateProjects() {
         projects.add(
             new Project(
-                "Photopres",
+                "Photopress",
                 "Photo-saving app built on mern stack",
                 "https://github.com/Gginne/photopress",
                 "http://photopress.herokuapp.com/"
