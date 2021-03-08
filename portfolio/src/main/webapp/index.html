@@ -78,9 +78,12 @@
              <h1 class="m-heading ">Contact <span class="text-primary">Me</span></h1>
              <div class="contact-content">
                  <div class="contact-form">
-                     <form method="POST">
-                        
-                        <textarea name="text-input">hello world</textarea>
+                     <form method="POST" action="/contact">
+                        <input name="name" placeholder="Your Name" />
+                        <br/>
+                        <input name="email" type="email" placeholder="Your Email" />
+                        <br/>
+                        <textarea name="message" placeholder="Your Message"></textarea>
                         <br/>
                         <input type="submit" />
                     </form>

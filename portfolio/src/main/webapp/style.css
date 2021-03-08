@@ -220,7 +220,10 @@ a {
 
 
 
-
+/*Contact */
+#contact .contact-content{
+    display: flex;
+}
 
 
 
