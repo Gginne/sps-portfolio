@@ -21,7 +21,10 @@ public class ProjectServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        populateProjects();
+        if(projects.isEmpty())
+            populateProjects();
+        
+        
         Gson projectGson = new Gson();
         Object[] projectsArr = projects.toArray();
         String projectJsonString = projectGson.toJson(projectsArr);
@@ -34,48 +37,48 @@ public class ProjectServlet extends HttpServlet {
     }
 
     private void populateProjects() {
-        projects.add(
-            new Project(
-                "Photopress",
-                "Photo-saving app built on mern stack",
-                "https://github.com/Gginne/photopress",
-                "http://photopress.herokuapp.com/"
-            )
+        Project Photopress = new Project(
+            "Photopress",
+            "Photo-saving app built on mern stack",
+            "https://github.com/Gginne/photopress",
+            "http://photopress.herokuapp.com/"
         );
-            
-        projects.add(
-            new Project(
-                "WeatherMe",
-                "Weather & forecast web app",
-                "https://github.com/Gginne/weather-app",
-                "https://weatherandme.netlify.app/"
-            )
+        projects.add(Photopress);
+        
+        Project WeatherMe = new Project(
+            "WeatherMe",
+            "Weather & forecast web app",
+            "https://github.com/Gginne/weather-app",
+            "https://weatherandme.netlify.app/"
         );
-        projects.add(
-            new Project(
-                "Store202",
-                "Online shoe store built in php",
-                "https://github.com/Gginne/IT202/tree/master/project",
-                "https://web.njit.edu/~gc348/IT202/project"
-            )
+        projects.add(WeatherMe);
+
+        Project Store202 = new Project(
+            "Store202",
+            "Online shoe store built in php",
+            "https://github.com/Gginne/IT202/tree/master/project",
+            "https://web.njit.edu/~gc348/IT202/project"
         );
-        projects.add(
-            new Project(
-                "Expense Tracker",
-                "Expense tracking web app built in vanilla js",
-                "ExpenseTrack",
-                "https://github.com/Gginne/expense-tracker",
-                "https://gginne.github.io/expense-tracker/"
-            )
+        projects.add(Store202);
+
+        Project ExpenseTrack = new Project(
+            "Expense Tracker",
+            "Expense tracking web app built in vanilla js",
+            "ExpenseTrack",
+            "https://github.com/Gginne/expense-tracker",
+            "https://gginne.github.io/expense-tracker/"
         );
-        projects.add(
-            new Project(
-                "Mixionary",
-                "Dictionary web app",
-                "https://github.com/Gginne/mixionary",
-                "https://gginne.github.io/mixionary/"
-            )
+        
+        projects.add(ExpenseTrack);
+        
+        Project Mixionary = new Project(
+            "Mixionary",
+            "Dictionary web app",
+            "https://github.com/Gginne/mixionary",
+            "https://gginne.github.io/mixionary/"
         );
+        
+        projects.add(Mixionary);
         
     }
 
