@@ -31,7 +31,7 @@ getProjects().then(projects => {
     let content = `
     <div class="item">
         <div class="item-overlay">
-            <p class="project-title text-primary">${project.title}</hp>
+            <p class="project-title text-primary lead">${project.title}</hp>
             <p class="project-desc my-1 small">${project.description}</p>
             <div class="project-links">
                 <a href=${project.github} target="_blank"><i class="fab fa-github icon-btn"></i></a>
@@ -48,6 +48,28 @@ projectContainer.innerHTML = projectContent
 }).catch(err => {
     console.err(err)
 })
+
+ const getTranslation = async (code, text) => {
+    const options = {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, *same-origin, omit
+    headers: {
+      'Content-Type': 'text/html'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: 'follow', // manual, *follow, error
+    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    }
+
+    const res = await fetch(`/translate?text=${text}&code=${code}`, options);
+    const data = await res.text();
+    console.log(data);
+    return data;
+ }
+
+
 
 /*
 const projects = [

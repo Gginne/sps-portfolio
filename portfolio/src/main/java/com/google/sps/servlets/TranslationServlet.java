@@ -1,7 +1,11 @@
+package com.google.sps.servlets;
+
 import com.google.cloud.translate.Translate;
 import com.google.cloud.translate.TranslateOptions;
 import com.google.cloud.translate.Translation;
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,10 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 public class TranslationServlet extends HttpServlet {
 
   @Override
-  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     // Get the request parameters.
     String originalText = request.getParameter("text");
-    String languageCode = request.getParameter("languageCode");
+    String languageCode = request.getParameter("code");
 
     // Do the translation.
     Translate translate = TranslateOptions.getDefaultInstance().getService();
@@ -23,8 +27,10 @@ public class TranslationServlet extends HttpServlet {
     String translatedText = translation.getTranslatedText();
 
     // Output the translation.
+    PrintWriter out = response.getWriter();
     response.setContentType("text/html; charset=UTF-8");
     response.setCharacterEncoding("UTF-8");
-    response.getWriter().println(translatedText);
+    out.print(translatedText);
+    out.flush();
   }
 }
