@@ -68,12 +68,19 @@ projectContainer.innerHTML = projectContent
     return data;
  }
 
-const elems = document.querySelectorAll('h1,h2,h3,h4,p,.m-heading')
+const elems = document.querySelectorAll('h1,h2,h3,h4,p')
 
 elems.forEach(elem => {
     
     getTranslation("es", elem.textContent).then(data => {
-        console.log(data)
+        let html;
+        if(elem.classList.contains("m-heading") && data.includes(" ")){
+            const subtitle = data.split(" ")
+            html = `${subtitle[0]} <span class="text-primary">${subtitle[1]}</span>`
+        } else {
+            html = data+" ";
+        }
+        elem.innerHTML = html;
     })
 })
 
