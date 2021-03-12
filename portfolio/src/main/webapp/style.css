@@ -103,7 +103,7 @@ a {
     font-family: 'Permanent Marker', cursive;
     font-size: 3rem;
     font-weight: 200;
-    padding-bottom: 1rem;
+    margin-bottom: 1.2rem;
 
 }
 
@@ -164,7 +164,7 @@ a {
     border-left: 1.5px solid var(--primary);
 }
 
-#showcase .showcase-content h1.title{
+#showcase .showcase-content .title{
     font-family: 'Permanent Marker', cursive;
     font-size: 5rem;
 }

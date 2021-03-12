@@ -65,9 +65,17 @@ projectContainer.innerHTML = projectContent
 
     const res = await fetch(`/translate?text=${text}&code=${code}`, options);
     const data = await res.text();
-    console.log(data);
     return data;
  }
+
+const elems = document.querySelectorAll('h1,h2,h3,h4,p,.m-heading')
+
+elems.forEach(elem => {
+    
+    getTranslation("es", elem.textContent).then(data => {
+        console.log(data)
+    })
+})
 
 
 
