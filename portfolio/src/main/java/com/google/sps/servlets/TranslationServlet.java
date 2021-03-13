@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/translate")
 public class TranslationServlet extends HttpServlet {
 
-  @Override
-  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     // Get the request parameters.
     String originalText = request.getParameter("text");
     String languageCode = request.getParameter("code");
@@ -28,9 +28,9 @@ public class TranslationServlet extends HttpServlet {
 
     // Output the translation.
     PrintWriter out = response.getWriter();
-    response.setContentType("text/html; charset=UTF-8");
+    response.setContentType("text/plain; charset=UTF-8");
     response.setCharacterEncoding("UTF-8");
     out.print(translatedText);
     out.flush();
-  }
+    }
 }

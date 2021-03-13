@@ -179,13 +179,11 @@ a {
 
 #about {
     min-height: 42vh;
-  
 }
 
 #about .container{
     display: flex;
 }
-
 
 #about .about-description{
     flex: 1;
