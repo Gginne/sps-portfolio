@@ -16,21 +16,21 @@ public class TranslationServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    // Get the request parameters.
-    String originalText = request.getParameter("text");
-    String languageCode = request.getParameter("code");
+        // Get the request parameters.
+        String originalText = request.getParameter("text");
+        String languageCode = request.getParameter("code");
 
-    // Do the translation.
-    Translate translate = TranslateOptions.getDefaultInstance().getService();
-    Translation translation =
-        translate.translate(originalText, Translate.TranslateOption.targetLanguage(languageCode));
-    String translatedText = translation.getTranslatedText();
+        // Do the translation.
+        Translate translate = TranslateOptions.getDefaultInstance().getService();
+        Translation translation =
+            translate.translate(originalText, Translate.TranslateOption.targetLanguage(languageCode));
+        String translatedText = translation.getTranslatedText();
 
-    // Output the translation.
-    PrintWriter out = response.getWriter();
-    response.setContentType("text/plain; charset=UTF-8");
-    response.setCharacterEncoding("UTF-8");
-    out.print(translatedText);
-    out.flush();
+        // Output the translation.
+        PrintWriter out = response.getWriter();
+        response.setContentType("text/plain; charset=UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        out.print(translatedText);
+        out.flush();
     }
 }

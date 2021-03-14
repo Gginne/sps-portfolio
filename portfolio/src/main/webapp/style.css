@@ -22,7 +22,7 @@ body {
 }
 
 a {
-    text-decoration: none;
+    color: var(--primary);
 }
 
 /* Utilities */
@@ -75,15 +75,13 @@ a {
 .btn:hover {
     color: var(--dark);
     background-color: var(--primary);
-  }
+}
 
 .btn-primary {
     color: var(--primary);
     border: 1px solid var(--primary);
     
 }
-
-
 
 .icon-btn{
     font-size: 1.5rem;
@@ -99,22 +97,17 @@ a {
 }
 
 .m-heading{
-
     font-family: 'Permanent Marker', cursive;
     font-size: 3rem;
     font-weight: 200;
     margin-bottom: 1.2rem;
-
 }
 
-
 .l-heading{
-
     font-family: 'Permanent Marker', cursive;
     font-size: 4rem;
     font-weight: 200;
     padding-bottom: 1rem;
-
 }
 
 .lead{
@@ -122,8 +115,7 @@ a {
     font-weight: 200;
 }
 .small{
-    font-size: .75rem;
-    
+    font-size: .75rem;  
 }
 
 .text-center{
@@ -145,6 +137,7 @@ a {
 .text-dark{
     color: var(--dark);
 }
+
 
 /*Showcase */
 
