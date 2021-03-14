@@ -23,6 +23,7 @@ body {
 
 a {
     color: var(--primary);
+    text-decoration: none;
 }
 
 /* Utilities */
@@ -72,15 +73,15 @@ a {
    
 }
 
-.btn:hover {
-    color: var(--dark);
-    background-color: var(--primary);
-}
-
 .btn-primary {
     color: var(--primary);
     border: 1px solid var(--primary);
     
+}
+
+.btn-primary:hover {
+    color: var(--dark);
+    background-color: var(--primary);
 }
 
 .icon-btn{
@@ -152,6 +153,18 @@ a {
         rgba(17, 17, 17, 0.8)),
     url('../img/anim.gif') no-repeat center bottom/cover;
 }
+
+#showcase .language {
+    align-self: flex-end;
+    margin-top: .25rem;
+    margin-right: 2rem;
+    
+}
+
+#showcase .language a {
+    padding: .25rem;
+}
+
 
 #showcase .showcase-content{
     border-left: 1.5px solid var(--primary);
