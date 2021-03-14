@@ -31,7 +31,7 @@ getProjects().then(projects => {
     let content = `
     <div class="item">
         <div class="item-overlay">
-            <p class="project-title text-primary">${project.title}</hp>
+            <p class="project-title text-primary lead">${project.title}</hp>
             <p class="project-desc my-1 small">${project.description}</p>
             <div class="project-links">
                 <a href=${project.github} target="_blank"><i class="fab fa-github icon-btn"></i></a>
@@ -48,6 +48,42 @@ projectContainer.innerHTML = projectContent
 }).catch(err => {
     console.err(err)
 })
+
+ const getTranslation = async (code, text) => {
+    const options = {
+        method: 'POST', 
+        mode: 'cors', 
+        cache: 'no-cache', 
+        credentials: 'same-origin', 
+        headers: {
+        'Content-Type': 'text/plain; charset=UTF-8'
+        },
+        redirect: 'follow', 
+        referrerPolicy: 'no-referrer'
+    }
+
+    const res = await fetch(`/translate?text=${text}&code=${code}`, options);
+    const data = await res.text();
+    return data;
+ }
+
+const elems = document.querySelectorAll('h1,h2,h3,h4,p')
+
+elems.forEach(elem => {
+    
+    getTranslation("es", elem.textContent).then(data => {
+        let html;
+        if(elem.classList.contains("m-heading") && data.includes(" ")){
+            const subtitle = data.split(" ")
+            html = `${subtitle[0]} <span class="text-primary">${subtitle[1]}</span>`
+        } else {
+            html = data+" ";
+        }
+        elem.innerHTML = html;
+    })
+})
+
+
 
 /*
 const projects = [

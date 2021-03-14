@@ -103,7 +103,7 @@ a {
     font-family: 'Permanent Marker', cursive;
     font-size: 3rem;
     font-weight: 200;
-    padding-bottom: 1rem;
+    margin-bottom: 1.2rem;
 
 }
 
@@ -117,9 +117,8 @@ a {
 
 }
 
-
 .lead{
-    font-size: 1.5rem;
+    font-size: 1.05rem;
     font-weight: 200;
 }
 .small{
@@ -165,7 +164,7 @@ a {
     border-left: 1.5px solid var(--primary);
 }
 
-#showcase .showcase-content h1.title{
+#showcase .showcase-content .title{
     font-family: 'Permanent Marker', cursive;
     font-size: 5rem;
 }
@@ -179,13 +178,12 @@ a {
 /*About Me */
 
 #about {
-    height: 40vh;
+    min-height: 42vh;
 }
 
 #about .container{
     display: flex;
 }
-
 
 #about .about-description{
     flex: 1;
