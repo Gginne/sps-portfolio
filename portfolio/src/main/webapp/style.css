@@ -22,6 +22,7 @@ body {
 }
 
 a {
+    color: var(--primary);
     text-decoration: none;
 }
 
@@ -72,18 +73,16 @@ a {
    
 }
 
-.btn:hover {
-    color: var(--dark);
-    background-color: var(--primary);
-  }
-
 .btn-primary {
     color: var(--primary);
     border: 1px solid var(--primary);
     
 }
 
-
+.btn-primary:hover {
+    color: var(--dark);
+    background-color: var(--primary);
+}
 
 .icon-btn{
     font-size: 1.5rem;
@@ -99,22 +98,17 @@ a {
 }
 
 .m-heading{
-
     font-family: 'Permanent Marker', cursive;
     font-size: 3rem;
     font-weight: 200;
     margin-bottom: 1.2rem;
-
 }
 
-
 .l-heading{
-
     font-family: 'Permanent Marker', cursive;
     font-size: 4rem;
     font-weight: 200;
     padding-bottom: 1rem;
-
 }
 
 .lead{
@@ -122,8 +116,7 @@ a {
     font-weight: 200;
 }
 .small{
-    font-size: .75rem;
-    
+    font-size: .75rem;  
 }
 
 .text-center{
@@ -146,6 +139,7 @@ a {
     color: var(--dark);
 }
 
+
 /*Showcase */
 
 #showcase{
@@ -159,6 +153,18 @@ a {
         rgba(17, 17, 17, 0.8)),
     url('../img/anim.gif') no-repeat center bottom/cover;
 }
+
+#showcase .language {
+    align-self: flex-end;
+    margin-top: .25rem;
+    margin-right: 2rem;
+    
+}
+
+#showcase .language a {
+    padding: .25rem;
+}
+
 
 #showcase .showcase-content{
     border-left: 1.5px solid var(--primary);

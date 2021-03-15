@@ -18,6 +18,7 @@
 
  const projectContainer = document.querySelector(".project-items");
 
+
  const getProjects = async () => {
      const res = await fetch("/projects");
      const data = await res.json();
@@ -67,21 +68,30 @@ projectContainer.innerHTML = projectContent
     return data;
  }
 
-const elems = document.querySelectorAll('h1,h2,h3,h4,p')
 
-elems.forEach(elem => {
-    
-    getTranslation("es", elem.textContent).then(data => {
-        let html;
-        if(elem.classList.contains("m-heading") && data.includes(" ")){
-            const subtitle = data.split(" ")
-            html = `${subtitle[0]} <span class="text-primary">${subtitle[1]}</span>`
+const changeLanguage = (lang) => {
+    const elems = document.querySelectorAll('h1,h2,h3,h4,p')
+
+    elems.forEach(elem => {
+
+        if(lang == 'es'){
+            getTranslation("es", elem.textContent).then(data => {
+                let html;
+                if(elem.classList.contains("m-heading") && data.includes(" ")){
+                    const subtitle = data.split(" ")
+                    html = `${subtitle[0]} <span class="text-primary">${subtitle[1]}</span>`
+                } else {
+                    html = data+" ";
+                }
+                elem.innerHTML = html;
+            })
         } else {
-            html = data+" ";
+            window.location.reload(true);
         }
-        elem.innerHTML = html;
     })
-})
+} 
+
+
 
 
 
