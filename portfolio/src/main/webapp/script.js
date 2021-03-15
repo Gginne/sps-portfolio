@@ -17,7 +17,7 @@
  */
 
  const projectContainer = document.querySelector(".project-items");
- var code = "en"
+
 
  const getProjects = async () => {
      const res = await fetch("/projects");
@@ -69,26 +69,29 @@ projectContainer.innerHTML = projectContent
  }
 
 
+const changeLanguage = (lang) => {
+    const elems = document.querySelectorAll('h1,h2,h3,h4,p')
 
-const elems = document.querySelectorAll('h1,h2,h3,h4,p')
+    elems.forEach(elem => {
 
-elems.forEach(elem => {
+        if(lang == 'es'){
+            getTranslation("es", elem.textContent).then(data => {
+                let html;
+                if(elem.classList.contains("m-heading") && data.includes(" ")){
+                    const subtitle = data.split(" ")
+                    html = `${subtitle[0]} <span class="text-primary">${subtitle[1]}</span>`
+                } else {
+                    html = data+" ";
+                }
+                elem.innerHTML = html;
+            })
+        } else {
+            window.location.reload(true);
+        }
+    })
+} 
 
-    if(code == 'es'){
-        getTranslation("es", elem.textContent).then(data => {
-            let html;
-            if(elem.classList.contains("m-heading") && data.includes(" ")){
-                const subtitle = data.split(" ")
-                html = `${subtitle[0]} <span class="text-primary">${subtitle[1]}</span>`
-            } else {
-                html = data+" ";
-            }
-            elem.innerHTML = html;
-        })
-    }
-    
- 
-})
+
 
 
 
